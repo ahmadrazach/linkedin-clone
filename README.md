@@ -15,3 +15,4 @@ Technologies used:
 - HTML
 - CSS
 - Javascript
+- Material-UI
