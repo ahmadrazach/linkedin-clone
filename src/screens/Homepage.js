@@ -2,6 +2,7 @@ import './Homepage.css'
 import React from 'react'
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import Feed from '../components/Feed';
 
 const Homepage = () => {
   return (
@@ -11,8 +12,8 @@ const Homepage = () => {
         {/* App body */}
         <div className='homepage__body'>
           <Sidebar/>
-          <h2>Anther one</h2>
-          <h2>Anther one</h2>
+          <Feed/>
+          <h2>3rd</h2>
         </div>
     </div>
   )
