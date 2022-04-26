@@ -1,16 +1,11 @@
 import React from 'react';
-import Header from './components/Header';
 import './App.css';
-
+import Homepage
+ from './screens/Homepage';
 function App() {
   return (
     <div className="App">
-      
-      <Header/>
-      {/* App Body */}
-        {/* Sidebar */}
-        {/* Feed */}
-        {/* Widgets */}
+      <Homepage/>
     </div>
   );
 }
