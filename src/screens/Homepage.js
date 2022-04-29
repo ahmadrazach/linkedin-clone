@@ -1,20 +1,54 @@
 import './Homepage.css'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
+import {useDispatch, useSelector }from 'react-redux';
+import { login,logout,selectUser } from '../features/userSlice';
+import Login from './Login';
+import { auth } from '../firebase/firebase';
 
 const Homepage = () => {
+
+  const user=useSelector(selectUser);
+  const dispatch=useDispatch();
+
+  useEffect(()=>{
+    auth.onAuthStateChanged((userAuth)=>{
+      if(userAuth){
+        //user's logged in
+        dispatch(
+          login({
+              email:userAuth.email,
+              uid:userAuth.uid,
+              displayName:userAuth.displayName,
+              photoURL:userAuth.photoURL,
+          })
+      )
+      }
+      else{
+        //user's not logged in
+        dispatch(logout());
+      }
+    })
+  },[])
   return (
     <div className='homepage'>
         <Header/>
 
-        {/* App body */}
-        <div className='homepage__body'>
+
+        {!user?(
+          <Login/>
+          ):(
+            <div className='homepage__body'>
           <Sidebar/>
           <Feed/>
           <h2>3rd</h2>
         </div>
+          )
+        }
+        {/* App body */}
+        
     </div>
   )
 }
