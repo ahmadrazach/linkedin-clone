@@ -4,7 +4,6 @@ import Textlogo from '../files/images/textlogo.png'
 import {auth} from '../firebase/firebase';
 import { useDispatch } from 'react-redux';
 import { login } from '../features/userSlice';
-import { AlternateEmail } from '@material-ui/icons';
 const Login = () => {
 
     const [email,setEmail]=useState("");

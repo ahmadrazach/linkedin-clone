@@ -7,6 +7,7 @@ import {useDispatch, useSelector }from 'react-redux';
 import { login,logout,selectUser } from '../features/userSlice';
 import Login from './Login';
 import { auth } from '../firebase/firebase';
+import Widgets from '../components/Widgets';
 
 const Homepage = () => {
 
@@ -43,7 +44,7 @@ const Homepage = () => {
             <div className='homepage__body'>
           <Sidebar/>
           <Feed/>
-          <h2>3rd</h2>
+          <Widgets/>
         </div>
           )
         }
