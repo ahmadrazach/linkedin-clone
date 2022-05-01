@@ -4,6 +4,7 @@ import Textlogo from '../files/images/textlogo.png'
 import {auth} from '../firebase/firebase';
 import { useDispatch } from 'react-redux';
 import { login } from '../features/userSlice';
+
 const Login = () => {
 
     const [email,setEmail]=useState("");
@@ -60,7 +61,6 @@ const Login = () => {
   return (
     <div className='login'>
         <img src={Textlogo} alt="LinkedIn text Logo"/>
-
         <form>
             <input 
             value={name}
@@ -88,9 +88,13 @@ const Login = () => {
             
             <button className='login__register' onClick={loginToApp}>Sign In</button>
         </form>
-        <p>Not a member ? 
-            <span className='login__register' onClick={register}>Register</span>
+        <p>Not a member?  
+            <span className='login__register' onClick={register}> Register</span>
         </p>
+        <br/>
+        <center>
+            <p><b> Click on Register button to sign in after register</b></p>
+        </center>
         
     </div>
   )

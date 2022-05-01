@@ -32,23 +32,22 @@ const Homepage = () => {
         dispatch(logout());
       }
     })
-  },[])
+  },[dispatch])
   return (
     <div className='homepage'>
-        <Header/>
-
-
-        {!user?(
-          <Login/>
-          ):(
-            <div className='homepage__body'>
-          <Sidebar/>
-          <Feed/>
-          <Widgets/>
-        </div>
+      {
+        !user?<Login/>
+          :(
+            <>
+              <Header/>
+              <div className='homepage__body'>
+              <Sidebar/>
+              <Feed/>
+              <Widgets/>
+              </div>
+            </>
           )
-        }
-        {/* App body */}
+      }
         
     </div>
   )
