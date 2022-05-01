@@ -11,11 +11,15 @@ import NotificationsIcon from "@material-ui/icons/Notifications"
 import {auth} from '../firebase/firebase'
 import { useDispatch } from 'react-redux';
 import { logout } from '../features/userSlice';
+import { useSelector } from 'react-redux'
+import { selectUser } from '../features/userSlice'
+
 
 const Header = () => {
 
   const dispatch=useDispatch();
 
+  const user=useSelector(selectUser);
   const logoutofApp=()=>{
     dispatch(logout())
     auth.signOut();
@@ -36,10 +40,11 @@ const Header = () => {
             <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
             <HeaderOption Icon={ChatIcon} title="Messaging"/>
             <HeaderOption Icon={NotificationsIcon} title="Notifications"/>
-            <HeaderOption 
-            avatar="true" 
-            onClick={logoutofApp} 
-            title="Ahmed"/>
+            <HeaderOption  
+              avatar="true" 
+              onClick={logoutofApp} 
+              title={user.displayName}/>
+
         </div>
 
     </div>
