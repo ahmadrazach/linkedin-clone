@@ -4,6 +4,11 @@
 
 <img src="https://github.com/ahmadrazach/linkedin-clone/blob/master/src/files/App%20demo.gif" alt="Demo image"/>
 
+Start the application using following command:
+```
+npm start
+```
+
 Basic Features:
  
 - Registration ( via Firebase Auth )
