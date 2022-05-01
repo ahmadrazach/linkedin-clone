@@ -30,6 +30,8 @@ const Feed = () => {
             }))
         ))
     },[])
+
+    
     const sendPost=(e)=>{
         e.preventDefault();
         
@@ -37,7 +39,7 @@ const Feed = () => {
             name:user.displayName,
             description:user.email,
             message:input,
-            photoUrl:user.photoUrl || "",
+            photoUrl:user.photoURL || "",
             timestamp:firebase.firestore.FieldValue.serverTimestamp(),
         })
 
