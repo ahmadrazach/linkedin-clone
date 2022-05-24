@@ -1,6 +1,6 @@
 # LinkedIn Clone with React.JS
 
-<a href="https://linkedin-clone-ea448.web.app/">Live Demo</a>
+# <a href="https://linkedin-clone-ea448.web.app/">Live Demo</a>
 
 <img src="https://github.com/ahmadrazach/linkedin-clone/blob/master/src/files/App%20demo.gif" alt="Demo image"/>
 
